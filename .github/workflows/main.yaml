@@ -24,7 +24,8 @@ jobs:
         run: npm run build:prod 
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          publish_dir: ./public
-          github_token: ${{ secrets.GH_TOKEN }}
+          folder: mrp-website/dist/browser
+          branch: prod
+          token: ${{ secrets.GH_TOKEN }}
