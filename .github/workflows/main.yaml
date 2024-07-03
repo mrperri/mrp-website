@@ -9,21 +9,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Build Angular app to prod
-        working-directory: mrp-website
+      - name: Install Dependencies
         run: npm install
+      
+      - name: Build
+        run: npm run build:prod 
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peacesiris/actions-gh-pages@v3
         with:
-          folder: mrp-website/dist/browser
-          branch: prod  
-          token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./dist/mrp-website
+          github_token: ${{ secrets.GH_TOKEN }}
