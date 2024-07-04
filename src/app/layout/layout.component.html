@@ -1,0 +1,25 @@
+<nz-layout class="layout">
+      <nz-header>
+        
+        <span class = "name">Mario Romildo Perri</span>
+        <span class="name-semicolon">;</span>
+        <span class="header-padding"></span>
+      
+
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+          @for (item of items; track item) {
+            <li nz-menu-item [routerLink]="item.route" routerLinkActive="active">
+              {{item.label}}
+              @if (item.icon) {
+                <span nz-icon nzType={{item.icon}} nzTheme="twotone" nzTwotoneColor='rgba(0, 0, 139, 0.842)'></span>
+              }
+            </li>
+          }
+        
+        </ul>
+      </nz-header>
+      <nz-content>
+      <router-outlet></router-outlet>
+      </nz-content>
+      <nz-footer>Created by Mario Perri</nz-footer>
+</nz-layout>
