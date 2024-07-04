@@ -11,12 +11,12 @@
   font-family: Brush Script MT;
   font-style: normal;
   font-weight: 650;
-  font-size: x-large;
+  font-size: xx-large;
     
 }
 .name-semicolon {
   float: left;
-  font-size: larger;
+  font-size: x-large;
   font-weight: 500;
 }
 
@@ -36,9 +36,12 @@ nz-header {
 [nz-menu-item] {
   color: rgba(0, 0, 139, 0.842);;
   font-weight: 400;
+  font-size: larger;
   text-shadow: #bbb;
 }
-
+.right-centered-span{
+  float:right
+}
 .item-routes{
   color: darkblue;
 }
