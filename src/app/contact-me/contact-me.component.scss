@@ -1,0 +1,31 @@
+.flex-item {
+    inline-size: 25%;
+    block-size: 54px;
+    background-color: var(--ant-primary-6);
+    align-self: center;
+  }
+  .even {
+    background-color: var(--ant-primary-5);
+  }
+
+
+  .divider-width {
+    width: 10%;
+  }
+  .inner-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 500px;
+    flex: auto;
+    flex-direction: row;
+    min-height: max-content;
+    background-color:  #3a23bb88;
+    float: center;
+    justify-content: center;
+    text-align: center;
+  }
+  ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center::before
+  ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center::after{
+    max-width: 10px;
+}

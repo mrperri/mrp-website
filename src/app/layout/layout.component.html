@@ -1,5 +1,5 @@
 <nz-layout class="layout">
-      <nz-header>
+      <nz-header class="header">
         <span class="name-semicolon">// </span>
         <span class = "name" routerLink="/home"><a routerLink="/home">Mario Romildo Perri</a></span>
         <span class="name-semicolon">;</span>
@@ -20,8 +20,11 @@
       </nz-header>
 
       <nz-content>
-      <router-outlet></router-outlet>
+        <div class = "inner-content">
+          <router-outlet></router-outlet>
+        </div>
+
       </nz-content>
-      
+
       <nz-footer>Created by Mario Perri</nz-footer>
 </nz-layout>

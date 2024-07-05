@@ -1,6 +1,4 @@
-.layout {
-  min-height: 100vh;
-}
+
 
 .name {
   // width: 120px;
@@ -14,20 +12,19 @@
   font-size: xx-large;
     
 }
+
+nz-content {
+  padding: 0 50px;
+}
+
 .name-semicolon {
   float: left;
   font-size: x-large;
   font-weight: 500;
 }
 
-
 .header-padding {
   margin-right: 500px;
-}
-nz-header {
-  position: fixed;
-  width: 100%;
-  min-width: 100em;
 }
 
 [nz-menu] {
@@ -46,11 +43,6 @@ nz-header {
   color: darkblue;
 }
 
-nz-content {
-  padding: 0 50px;
-  margin-top: 64px;
-}
-
 nz-breadcrumb {
   margin: 16px 0;
 }
@@ -62,5 +54,18 @@ nz-breadcrumb {
 }
 
 nz-footer {
+  text-align: center;
+  position: relative;
+  bottom: 0;
+}
+
+.inner-content {
+  position: relative;
+  padding: 500px;
+  flex-direction: row;
+  min-height: max-content;
+  background-color:  #3a23bb88;
+  float: top;
+  justify-content: top;
   text-align: center;
 }
