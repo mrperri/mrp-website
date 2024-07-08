@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.div-inner-content {
+    position: relative;
+    padding: 500px;
+    flex-direction: row;
+    min-height: max-content;
+    background-color:  #3a23bb88;
+    float: top;
+    justify-content: top;
+    text-align: center;
+  }

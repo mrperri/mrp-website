@@ -25,7 +25,22 @@
     justify-content: center;
     text-align: center;
   }
-  ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center::before
-  ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center::after{
-    max-width: 10px;
-}
+
+  [nz-row] {
+    padding: 10px;
+    padding-bottom: 10%;
+    min-height: max-content;
+    background-color:  #8e7fe2b4;
+  }
+
+  [nz-col] {
+    justify-content: center;
+    align-content: center;
+  }
+
+  h1{
+    text-align: center;
+    float: center;
+    justify-content: center;
+    align-content: center;
+  }
