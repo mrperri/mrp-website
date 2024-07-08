@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -27,9 +27,25 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
     NzIconModule, 
     NzSpaceModule ],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.scss'
+  styleUrl: './layout.component.scss',
+  animations: [
+    trigger('openClose',[
+      state('closed', style({ transform: 'translateY(-70%)' })),
+      state('open', style({ transform: 'translateX(0)' })),
+      transition('closed => open', [animate('2s ease-in')])
+    ])
+  ]
 })
-export class SiteLayoutComponent {
+export class SiteLayoutComponent implements OnInit, AfterViewInit{
+
+  protected nameState: 'open' | 'closed' = 'closed';
+
+  ngOnInit() {
+
+  }
+  ngAfterViewInit() {
+      this.nameState ='open'
+  }
 
   items = [
 		{
