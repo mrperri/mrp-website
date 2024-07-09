@@ -1,7 +1,7 @@
 <nz-layout class="layout">
       <nz-header class="header">
-        <span class="name-semicolon pad-left">// </span>
-        <span class = "name" [@openClose]="nameState" routerLink="/home"><a routerLink="/home">Mario Romildo Perri</a></span>
+        <span [@openClose]="nameState" (@openClose.done)="changeNameColor($event)" class="name-semicolon pad-left">// </span>
+        <span class = "name" routerLink="/home"><a routerLink="/home" #nameElement>{{ name$ | async }}</a></span>
         <span class="name-semicolon">;</span>
         
         <span class = "right-centered-span">

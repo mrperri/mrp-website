@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, inject, Renderer2, ViewChild, ElementRef} from '@angular/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,13 +8,19 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzSpaceModule } from 'ng-zorro-antd/space';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { animate, keyframes, style, transition, trigger, state, AnimationEvent } from '@angular/animations';
+
+import { TypewriterEffectService } from '../../services/typerwritereffect.service';
+import { map } from 'rxjs';
+
+const timing = '4s ease';
 
 
 @Component({
   selector: 'app-site-layout',
   standalone: true,
-  
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
   imports: [
 
     CommonModule, 
@@ -30,22 +36,45 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrl: './layout.component.scss',
   animations: [
     trigger('openClose',[
-      state('closed', style({ transform: 'translateY(-70%)' })),
-      state('open', style({ transform: 'translateX(0)' })),
-      transition('closed => open', [animate('2s ease-in')])
+      state('closed', style({ transform: 'translateY(-40%)'})),
+      state('open', style({ transform: 'translateY(-4.5%)' })),
+      transition('closed => open', [
+        animate(timing, keyframes([
+          style({ transform: 'translateY(-40%) scale(.4)', offset: 0 }), // initial
+          style({ transform: 'translateY(40%) scale(.4)', offset: 0.1 }),
+          style({ transform: 'translateY(-30%) scale(.5)', offset: 0.2 }), //1st
+          style({ transform: 'translateY(30%) scale(.5)', offset: 0.25 }),
+          style({ transform: 'translateY(-20%) scale(.6)', offset: 0.3 }), // 2nd
+          style({ transform: 'translateY(20%) scale(0.6)', offset: 0.4 }),
+          style({ transform: 'translateY(-15%) scale(.7)', offset: 0.5 }), //3rd
+          style({ transform: 'translateY(15%) scale(0.7)', offset: 0.6 }),
+          style({ transform: 'translateY(-10%) scale(0.9)', offset: 0.7 }), // 4th
+          style({ transform: 'translateY(10%) scale(0.9)', offset: 0.8 }),
+          style({ transform: 'translateY(-4.5%) scale(1)', offset: 1 }) // last
+        ]))
+     
+
+          // animate(timing, keyframes([
+          //   style({ transform: 'translateX(-150%) scale(.1)', offset: 0 }),
+          //   style({ transform: 'translateX(-125%) scale(.1)', offset: 0.1 }),
+          //   style({ transform: 'translateX(-105%) scale(.3)', offset: 0.3 }),
+          //   style({ transform: 'translateX(-75%) scale(0.5)', offset: 0.5 }),
+          //   style({ transform: 'translateX(-50%) scale(0.7)', offset: 0.7 }),
+          //   style({ transform: 'translateX(-20%) scale(0.9)', offset: 0.9 }),
+          //   style({ transform: 'translateY(-4.5%) scale(1)', offset: 1 })
+          // ]))
+        ]
+      )
     ])
   ]
 })
 export class SiteLayoutComponent implements OnInit, AfterViewInit{
 
+  private typewriterService = inject(TypewriterEffectService);
+
   protected nameState: 'open' | 'closed' = 'closed';
-
-  ngOnInit() {
-
-  }
-  ngAfterViewInit() {
-      this.nameState ='open'
-  }
+  
+  @ViewChild('nameElement') nameElement: ElementRef | undefined;
 
   items = [
 		{
@@ -74,5 +103,37 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit{
 			route: "/contact-me",
 		}
 	];
+
+  name$ = this.typewriterService
+  .getTypewriterEffect("Mario Romildo Perri")
+  .pipe(map((text) => text));
+
+  ngOnInit() {
+
+  }
+  ngAfterViewInit() {
+    setTimeout( () => {
+      console.log("state is now open")
+      this.nameState = 'open';
+    }, 10);
+  }
+  constructor(private renderer: Renderer2) {}
+
+
+  protected changeNameColor(event: AnimationEvent) {
+    console.log(event);
+    if (event.fromState !== 'void') {
+      this.renderer.addClass(event.element, 'commented-out');
+      if (this.nameElement != undefined) {
+        console.log("element found")
+        this.renderer.addClass(this.nameElement.nativeElement, 'commented-out')
+      }
+      setTimeout( () => {
+        if (this.nameElement != undefined) {
+        this.renderer.removeClass(this.nameElement.nativeElement, 'commented-out');
+        }
+      }, 2500);
+    }
+  }
 
 }
