@@ -13,7 +13,7 @@ import { animate, keyframes, style, transition, trigger, state, AnimationEvent }
 import { TypewriterEffectService } from '../../services/typerwritereffect.service';
 import { map } from 'rxjs';
 
-const timing = '4s ease';
+const timing = '5s linear';
 
 
 @Component({
@@ -46,10 +46,11 @@ const timing = '4s ease';
           style({ transform: 'translateY(30%) scale(.5)', offset: 0.25 }),
           style({ transform: 'translateY(-20%) scale(.6)', offset: 0.3 }), // 2nd
           style({ transform: 'translateY(20%) scale(0.6)', offset: 0.4 }),
-          style({ transform: 'translateY(-15%) scale(.7)', offset: 0.5 }), //3rd
+          style({ transform: 'translateY(-15%) scale(.7) ', offset: 0.5 }), //3rd
           style({ transform: 'translateY(15%) scale(0.7)', offset: 0.6 }),
-          style({ transform: 'translateY(-10%) scale(0.9)', offset: 0.7 }), // 4th
+          style({ transform: 'translateY(-10%) scale(0.9) ', offset: 0.7 }), // 4th
           style({ transform: 'translateY(10%) scale(0.9)', offset: 0.8 }),
+          style({ transform: 'translateY(4.5%) scale(0.95)', offset: 0.9 }),
           style({ transform: 'translateY(-4.5%) scale(1)', offset: 1 }) // last
         ]))
      
@@ -131,8 +132,9 @@ export class SiteLayoutComponent implements OnInit, AfterViewInit{
       setTimeout( () => {
         if (this.nameElement != undefined) {
         this.renderer.removeClass(this.nameElement.nativeElement, 'commented-out');
+        this.renderer.addClass(event.element, 'hidden');
         }
-      }, 2500);
+      }, 3000);
     }
   }
 
