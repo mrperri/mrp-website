@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 .div-inner-content {
     position: relative;
     padding: 500px;
@@ -12,4 +13,30 @@
 
   .hidden {
     opacity: 0;
+  }
+
+  .centered {
+    text-align: center;
+    float: center;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .large-text {
+    font-size: x-large;
+  }
+  .header-text {
+    font-size: 52px;
+    color: var(--text-color);
+  }
+  .bold {
+    font-weight: bold;
+  }
+
+  .medium-top-margin {
+    margin-top: 5%;
+  }
+
+  .small-bottom-margin {
+    margin-bottom: 3%;
   }
