@@ -13,8 +13,8 @@ import { animate, keyframes, style, transition, trigger, state, AnimationEvent }
 import { TypewriterEffectService } from '../../services/typerwritereffect.service';
 import { map } from 'rxjs';
 
-const timing = '5s linear';
 
+const timing = '5s linear';
 
 @Component({
   selector: 'app-site-layout',
@@ -22,7 +22,6 @@ const timing = '5s linear';
   changeDetection: ChangeDetectionStrategy.OnPush,
 
   imports: [
-
     CommonModule, 
     NzLayoutModule, 
     NzMenuModule, 
@@ -53,19 +52,7 @@ const timing = '5s linear';
           style({ transform: 'translateY(4.5%) scale(0.95)', offset: 0.9 }),
           style({ transform: 'translateY(-4.5%) scale(1)', offset: 1 }) // last
         ]))
-     
-
-          // animate(timing, keyframes([
-          //   style({ transform: 'translateX(-150%) scale(.1)', offset: 0 }),
-          //   style({ transform: 'translateX(-125%) scale(.1)', offset: 0.1 }),
-          //   style({ transform: 'translateX(-105%) scale(.3)', offset: 0.3 }),
-          //   style({ transform: 'translateX(-75%) scale(0.5)', offset: 0.5 }),
-          //   style({ transform: 'translateX(-50%) scale(0.7)', offset: 0.7 }),
-          //   style({ transform: 'translateX(-20%) scale(0.9)', offset: 0.9 }),
-          //   style({ transform: 'translateY(-4.5%) scale(1)', offset: 1 })
-          // ]))
-        ]
-      )
+      ])
     ])
   ]
 })
