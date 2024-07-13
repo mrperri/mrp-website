@@ -1,31 +1,40 @@
 
 
 .name {
-    // width: 120px;
-    // height: 31px;
-    // background: rgba(255, 255, 255, 0.2);
-    // margin: 16px 24px 16px 0;
     float: left;
     font-family: Brush Script MT;
     font-style: normal;
     font-weight: 650;
-    font-size: xx-large;
-      
+    font-size: xx-large;    
   }
   
   .commented-out {
-    text-color: grey;
     color: grey;
   }
-  
+  .layout{
+    background-color: rgb(255, 255, 255);
+  }
+  nz-layout {
+    height: 100%;
+  }
   nz-content {
     padding: 0 50px;
+    min-width: 80%;
+    min-height: 80%;
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
   }
   
   .name-semicolon {
     float: left;
     font-size: x-large;
     font-weight: 500;
+  }
+  .margin-down {
+    margin-bottom: 2%;
   }
   
   .header-padding {
@@ -47,16 +56,6 @@
     color: darkblue;
   }
   
-  nz-breadcrumb {
-    margin: 16px 0;
-  }
-  
-  .inner-content {
-  
-    padding: 24px;
-    min-height: 380px;
-  }
-  
   nz-footer {
     text-align: center;
     position: relative;
@@ -65,14 +64,3 @@
   .pad-left{
     padding-left: 80px;
   }
-  .inner-content {
-    position: relative;
-    padding: 500px;
-    flex-direction: row;
-    min-height: max-content;
-    background-color:  #3a23bb88;
-    float: top;
-    justify-content: top;
-    text-align: center;
-  }
-  

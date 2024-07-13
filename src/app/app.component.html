@@ -1,6 +1,6 @@
 
 <nz-layout class="layout">
-    <nz-header class="header">
+    <nz-header class="layout margin-down">
       <span [@openClose]="nameState" (@openClose.done)="changeNameColor($event)" class="name-semicolon pad-left">// </span>
       <span class = "name" routerLink="/home"><a routerLink="/home" #nameElement>{{ name$ | async }}</a></span>
       <span class="name-semicolon">;</span>
@@ -20,12 +20,12 @@
       </span>
     </nz-header>
 
-    <nz-content>
+    <nz-content class="layout">
     
      <router-outlet></router-outlet>
       
 
     </nz-content>
 
-    <nz-footer>Created by Mario Perri</nz-footer>
+    <nz-footer class="layout">Created by Mario Perri</nz-footer>
 </nz-layout>

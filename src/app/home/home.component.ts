@@ -4,21 +4,23 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { animate, keyframes, style, transition, trigger, state, AnimationEvent } from '@angular/animations';
+import { NzDividerModule } from 'ng-zorro-antd/divider';
 
-export const fadeInAnimation = trigger('fadeIn', [
+
+export const fadeDownAnimation = trigger('fadeDown', [
   transition(':enter', [
-    style({ opacity: 0 }),
-    animate('2s', style({ opacity: 1 })),
+    style({  transform: 'translateY(-5%) scale(1)',opacity: 0 }),
+    animate('800ms ease-in', style({  transform: 'translateY(0%) scale(1)',opacity: 1 })),
   ]),
 ]);
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NzFlexModule, NzGridModule, NzIconModule],
+  imports: [NzFlexModule, NzGridModule, NzIconModule, NzDividerModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
-  animations: [fadeInAnimation]
+  animations: [fadeDownAnimation]
 })
 export class HomeComponent {
 
