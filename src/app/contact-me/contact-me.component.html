@@ -1,38 +1,59 @@
 <!-- <div class = div-inner-content> -->
-<nz-water-mark nzContent="{{waterMarkContent}}" class="contact-me-watermark" [nzZIndex]="0" [nzFont]="font">
-<div nz-row>
-  <div nz-col nzFlex="50%">
-    <div class="centered medium-top-margin">
-        <h1 class="header-text bold">Contact me</h1>
+<nz-water-mark
+  nzContent="{{ waterMarkContent }}"
+  class="contact-me-watermark"
+  [nzZIndex]="0"
+  [nzFont]="font"
+>
+  <div nz-row>
+    <div nz-col nzFlex="50%" class="">
+      <div class = "contact-information-container">
+        <div class="centered medium-top-margin">
+          <h1 class="header-text bold">Contact me</h1>
+        </div>
+        <div class="centered small-bottom-margin">
+          <span class="large-text bold">Phone:</span>
+          <span class="large-text bold">724-991-5214</span>
+        </div>
+        <div class="centered small-bottom-margin">
+          <a href="https://www.linkedin.com/in/mario-perri-7019801b7/">
+            <span
+              nz-icon
+              nzType="linkedin"
+              class="social-icons"
+              style="color: #0a66c2"
+              nzTheme="fill"
+            ></span>
+          </a>
+          <a href="https://github.com/mrperri">
+            <span
+              nz-icon
+              nzType="github"
+              class="social-icons"
+              style="color: #24292e"
+              nzTheme="fill"
+            ></span>
+          </a>
+          <a href="mailto:marioromildoperri@gmail.com">
+            <span
+              nz-icon
+              nzType="mail"
+              class="social-icons"
+              style="color: #333366"
+              nzTheme="outline"
+            ></span>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class ="centered small-bottom-margin">
-        <span class="large-text bold">Phone:</span> 
-        <span class="large-text bold">724-991-5214</span>
+    <div nz-col nzFlex="auto" class="">
+      <div class="profile-picture-container">
+        <img
+          src="../../assets/images/MyPicture2021.jpg"
+          alt="Picture of Mario"
+          class="profile-picture"
+        />
+      </div>
     </div>
-    <div class="centered small-bottom-margin">
-      <a href="https://www.linkedin.com/in/mario-perri-7019801b7/">
-        <span
-        nz-icon
-        nzType="linkedin"
-        class="social-icons"
-        style="color: #0a66c2"
-        nzTheme="fill"></span>
-      </a>
-      <a href="https://github.com/mrperri"> 
-        <span nz-icon nzType="github" class="social-icons" style="color: #24292e" nzTheme="fill"></span>
-      </a>
-      <a href="mailto:marioromildoperri@gmail.com">
-        <span nz-icon nzType="mail" class="social-icons"  style="color: #333366" nzTheme="outline"></span>
-      </a>
-    </div>
-
   </div>
-  <div nz-col nzFlex="auto" class="centered">
-    <div class = "medium-top-margin profile-picture-container centered">
-      <img src="../../assets/images/MyPicture2021.jpg" alt="Picture of Mario" class ="profile-picture">
-    </div>
-    
-  </div>
-
-</div>
 </nz-water-mark>

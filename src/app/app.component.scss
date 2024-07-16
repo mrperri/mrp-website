@@ -18,14 +18,7 @@
     height: 100%;
   }
   nz-content {
-    padding: 0 50px;
-    min-width: 80%;
-    min-height: 80%;
-    width: 90%;
-    height: 90%;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+   height: 100%;
   }
   
   .name-semicolon {
@@ -45,7 +38,7 @@
     line-height: 64px;
   }
   [nz-menu-item] {
-    color: rgba(0, 0, 139, 0.842);;
+    color: rgba(0, 0, 139, 0.842);
     font-weight: 400;
     font-size: larger;
   }
@@ -58,8 +51,12 @@
   
   nz-footer {
     text-align: center;
+    justify-content: center;
+    align-content: center;
     position: relative;
     bottom: 0;
+    display: flex;
+    z-index: 100;
   }
   .pad-left{
     padding-left: 80px;
