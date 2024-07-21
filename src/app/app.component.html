@@ -1,9 +1,10 @@
 
 <nz-layout class="layout">
-    <nz-header class="layout margin-down">
-      <span [@openClose]="nameState" (@openClose.done)="changeNameColor($event)" class="name-semicolon pad-left">// </span>
+  <div class = "name-container">
+  <span [@openClose]="nameState" (@openClose.done)="changeNameColor($event)" class="name-semicolon pad-left">// </span>
       <span class = "name" routerLink="/home"><a routerLink="/home" #nameElement>{{ name$ | async }}</a></span>
-      <span class="name-semicolon">;</span>
+      <span class="name-semicolon">;</span> </div>
+    <nz-header class="layout margin-down">
       
       <span class = "right-centered-span">
         <ul nz-menu nzTheme="dark" nzMode="horizontal">
