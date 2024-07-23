@@ -1,0 +1,14 @@
+.custom-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+  }
+  
+  .custom-divider::before,
+  .custom-divider::after {
+    content: '';
+    flex: 1;
+    border-top: 1px solid #ccc;
+  }

@@ -15,7 +15,7 @@
   }
 
   .home-text-box {
-    max-width: 800px; 
+    max-width: 800px;
     width: 90%; 
     padding: 20px;
     background-color: #ffffff; 
@@ -24,9 +24,10 @@
     // border-radius: 10px; 
     line-height: 1.5; 
     margin-bottom: 2.5%;
+    justify-content: center;
+    align-content: center;
     
   }
-
 .box-list-container {
     display: flex;
     flex-direction: column;
