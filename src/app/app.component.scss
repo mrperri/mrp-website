@@ -1,10 +1,16 @@
 
 
+// @media  (max-width: 1250px){
+//   .name-container{
+//     position: fixed;
+//     top: 2000px;
+//     left: 20px;
+//   }
+// }
 .name-container{
   position: fixed;
   top: 5px;
   left: 20px;
-  flex: 1;
 }
 .name {
     float: left;
@@ -15,6 +21,12 @@
     width: 324px;
     flex: 1;
   }
+  // @media (max-width: 1250px) {
+  //   .name {
+  //       font-size: large;  
+  //     }
+  // }
+    
   
   .commented-out {
     color: grey;

@@ -1,32 +1,45 @@
-
 <nz-layout class="layout">
-  <div class = "name-container">
-  <span [@openClose]="nameState" (@openClose.done)="changeNameColor($event)" class="name-semicolon pad-left">// </span>
-      <span class = "name" routerLink="/home"><a routerLink="/home" #nameElement>{{ name$ | async }}</a></span>
-      <span class="name-semicolon">;</span> </div>
-    <nz-header class="layout margin-down">
-      
-      <span class = "right-centered-span">
-        <ul nz-menu nzTheme="dark" nzMode="horizontal">
-          @for (item of items; track item) {
-            <li nz-menu-item [routerLink]="item.route" routerLinkActive="active">
-              {{item.label}}
-              @if (item.icon) {
-                <span nz-icon nzType={{item.icon}} nzTheme="twotone" nzTwotoneColor='rgba(0, 0, 139, 0.842)'></span>
-              }
-            </li>
+  <div class="name-container">
+    <span [@openClose]="nameState" (@openClose.done)="changeNameColor($event)" class="name-semicolon pad-left">//
+    </span>
+    <span class="name" routerLink="/home"><a routerLink="/home" #nameElement>{{ name$ | async }}</a></span>
+  </div>
+  <nz-header class="layout margin-down">
+    <span class="right-centered-span">
+      <ul nz-menu nzTheme="dark" nzMode="horizontal" *ngIf="menuIsVisible; else elseBlock">
+        @for (item of items; track item) {
+        <li nz-menu-item [routerLink]="item.route" routerLinkActive="active">
+          {{ item.label }}
+          @if (item.icon) {
+          <span nz-icon nzType="{{ item.icon }}" nzTheme="twotone" nzTwotoneColor="rgba(0, 0, 139, 0.842)"></span>
           }
-      
-        </ul> 
-      </span>
-    </nz-header>
+        </li>
+        }
+      </ul>
+      <ng-template #elseBlock>
+        <div class="float-right">
+          <div nz-dropdown nzTrigger="click" [nzDropdownMenu]="menu" nz-icon nzType="menu"></div>
+          <nz-dropdown-menu #menu="nzDropdownMenu">
+            <ul nz-menu>
+              @for (item of items; track item) {
+              <li nz-menu-item [routerLink]="item.route" routerLinkActive="active">
+                {{ item.label }}
+                @if (item.icon) {
+                <span *ngIf="iconIsVisible" nz-icon nzType="{{ item.icon }}" nzTheme="twotone"
+                  nzTwotoneColor="rgba(0, 0, 139, 0.842)"></span>
+                }
+              </li>
+              }
+            </ul>
+          </nz-dropdown-menu>
+        </div>
+      </ng-template>
+    </span>
+  </nz-header>
 
-    <nz-content class="layout content">
-    
-     <router-outlet></router-outlet>
-      
+  <nz-content class="layout content">
+    <router-outlet></router-outlet>
+  </nz-content>
 
-    </nz-content>
-
-    <nz-footer class="layout app-bottom">Created by Mario Perri</nz-footer>
+  <nz-footer class="layout app-bottom">Created by Mario Perri</nz-footer>
 </nz-layout>

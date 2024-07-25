@@ -1,7 +1,7 @@
 <div class="icon-container">
   @for (item of icons; track item) {
     <div class="icon">
-      <img [src]="item.src" [alt]="item.description">
+      <img [src]="item.src" [alt]="item.description" title="{{item.description}}">
       <div class="tooltip">{{ item.description }}</div>
     </div>
   }
