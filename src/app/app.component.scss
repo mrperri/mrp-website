@@ -21,11 +21,11 @@
     width: 324px;
     flex: 1;
   }
-  // @media (max-width: 1250px) {
-  //   .name {
-  //       font-size: large;  
-  //     }
-  // }
+  @media (max-width: 1250px) {
+    .name {
+        font-size: large;  
+      }
+  }
     
   
   .commented-out {
