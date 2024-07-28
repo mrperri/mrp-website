@@ -1,47 +1,47 @@
-<div nz-row>
-  <div nz-col nzFlex="50%">
-    <div class="home-text-box" [@fadeDown]>
-      <p class="header-text">Mario Romildo Perri</p>
-      <p class="medium-text bold">
-        Methodical and highly-driven engineer with demonstrated success designing and implementing robust, scalable solutions that drive critical business objectives and growth. 
-        Collaborator at heart, passionate about optimizing delivery processes and fostering continuous improvement.
-      </p>
-    </div>
+<div class="home-container-left">
+  <div id="main-text-box" class="home-text-box" [@fadeDown]>
+    <p class="header-text">Mario Romildo Perri</p>
+    <p class="medium-text bold">
+      Methodical and highly-driven engineer with demonstrated success designing and implementing robust, scalable
+      solutions that drive critical business objectives and growth.
+      Collaborator at heart, passionate about optimizing delivery processes and fostering continuous improvement.
+    </p>
   </div>
-  <div nz-col nzFlex="50%">
-    <div class="home-text-box" [@fadeDown]>
-      <app-divider text="Backend Development"></app-divider>
-      <app-icon-list [icons]="backendDevIcons"></app-icon-list>
+</div>
+<!-- <app-divider text="My Skills"></app-divider> -->
+<div class="home-container-right">
+  <div class="home-text-box" [@fadeDown]>
+    <app-divider text="Backend Development"></app-divider>
+    <app-icon-list [icons]="backendDevIcons"></app-icon-list>
 
-      <ul>
-        @for (item of frontendDevItems; track item) {
-          <li class="medium-text">
-            {{item}}
-          </li>
-        }
-      </ul>
-    </div>
-    <div class="home-text-box">
-      <app-divider text="Frontend Development"></app-divider>
-      <app-icon-list [icons]="frontendDevIcons"></app-icon-list>
-      <ul>
-        @for (item of frontendDevItems; track item) {
-          <li class="medium-text">
-            {{item}}
-          </li>
-        }
-      </ul>
-    </div>
-    <div class="home-text-box">
-      <app-divider text="Other Technologies"></app-divider>
-      <app-icon-list [icons]="otherTechIcons"></app-icon-list>
-      <ul>
-        @for (item of frontendDevItems; track item) {
-          <li class="medium-text">
-            {{item}}
-          </li>
-        }
-      </ul>
-    </div>
+    <ul>
+      @for (item of frontendDevItems; track item) {
+      <li class="medium-text">
+        {{item}}
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="home-text-box"  [@fadeDown]>
+    <app-divider text="Frontend Development"></app-divider>
+    <app-icon-list [icons]="frontendDevIcons"></app-icon-list>
+    <ul>
+      @for (item of frontendDevItems; track item) {
+      <li class="medium-text">
+        {{item}}
+      </li>
+      }
+    </ul>
+  </div>
+  <div class="home-text-box"  [@fadeDown]>
+    <app-divider text="Other Technologies"></app-divider>
+    <app-icon-list [icons]="otherTechIcons"></app-icon-list>
+    <ul>
+      @for (item of frontendDevItems; track item) {
+      <li class="medium-text">
+        {{item}}
+      </li>
+      }
+    </ul>
   </div>
 </div>

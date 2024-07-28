@@ -6,14 +6,16 @@
   </div>
   <nz-header class="layout margin-down">
     <span class="right-centered-span">
-      <ul nz-menu nzTheme="dark" nzMode="horizontal" *ngIf="menuIsVisible; else elseBlock">
+      <ul nz-menu nzTheme="dark" nzMode="horizontal" *ngIf="menuIsVisible; else elseBlock" class = "medium-text">
         @for (item of items; track item) {
+          @if (item.show) {
         <li nz-menu-item [routerLink]="item.route" routerLinkActive="active">
           {{ item.label }}
           @if (item.icon) {
-          <span nz-icon nzType="{{ item.icon }}" nzTheme="twotone" nzTwotoneColor="rgba(0, 0, 139, 0.842)"></span>
+          <span nz-icon nzType="{{ item.icon }}" nzTheme="twotone" nzTwotoneColor="rgba(0, 0, 139, 0.842)" class="medium-text"></span>
           }
         </li>
+      }
         }
       </ul>
       <ng-template #elseBlock>

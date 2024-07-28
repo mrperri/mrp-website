@@ -26,6 +26,7 @@
         font-size: large;  
       }
   }
+ 
     
   
   .commented-out {
@@ -38,11 +39,9 @@
     margin-left: 5%;
     margin-right: 5%;
     flex: 1;
+    flex-wrap: wrap;
   }
-  nz-layout {
-    height: 100%;
-    display: flex;
-  }
+
   
   .name-semicolon {
     float: left;
@@ -50,7 +49,8 @@
     font-weight: 500;
   }
   .margin-down {
-    margin-bottom: 2%;
+    margin-top: 1%;
+    margin-bottom: 3%;
   }
   
   .header-padding {
@@ -69,6 +69,7 @@
     font-size: larger;
     justify-content: center;
     align-content: center;
+    border-radius: 15px;
     
   }
   .right-centered-span{
@@ -82,14 +83,8 @@
     text-align: center;
     justify-content: center;
     align-content: center;
-    position: relative;
-    bottom: 0;
-    display: flex;
-    z-index: 100;
+    z-index: 1000;
   }
   .pad-left{
     padding-left: 0px;
-  }
-  .app-bottom{
-    bottom: 0;
   }

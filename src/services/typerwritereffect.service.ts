@@ -25,8 +25,8 @@ interface TypeParams {
   
     getTypewriterEffect(word: string) {
       return concat(
-        this.type( word, 145 ),
-        of('').pipe(delay(1200), ignoreElements())
+        this.type( word, 1000 ),
+        of('').pipe(delay(3000), ignoreElements())
       );
     }
   }

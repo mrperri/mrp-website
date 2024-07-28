@@ -94,31 +94,36 @@ export class AppComponent implements OnInit, AfterViewInit {
       label: 'Home',
       icon: 'home',
       route: '/home',
+      show: true
     },
     {
       label: 'Education',
       icon: 'book',
       route: '/education',
+      show: false
     },
     {
       label: 'Experience',
       icon: 'build',
       route: '/experience',
+      show: true
     },
     {
       label: 'Projects',
       icon: 'bulb',
       route: '/projects',
+      show: false
     },
     {
       label: 'Contact Me',
       icon: 'phone',
       route: '/contact-me',
+      show: true
     },
   ];
 
   name$ = this.typewriterService
-    .getTypewriterEffect('Mario Romildo Perri')
+    .getTypewriterEffect('MRP')
     .pipe(map((text) => text));
 
   ngOnInit() {}

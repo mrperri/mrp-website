@@ -30,6 +30,7 @@
 
   .large-text {
     font-size: xx-large;
+    font-weight: bold;
   }
 
   .medium-text {
@@ -37,7 +38,9 @@
   }
   .header-text {
     font-size: 52px;
+    margin-bottom: 1vw;
     color: var(--text-color);
+    font-weight: bold;
   }
   .bold {
     font-weight: bold;

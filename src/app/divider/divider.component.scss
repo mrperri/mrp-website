@@ -4,11 +4,24 @@
     text-align: center;
     width: 100%;
     position: relative;
+    margin-bottom: 1em;
   }
   
   .custom-divider::before,
   .custom-divider::after {
     content: '';
     flex: 1;
-    border-top: 1px solid #ccc;
+    border-top: 2px solid transparent;
+  }
+
+  .custom-divider::before {
+    border-image: linear-gradient(to right, rgb(28, 12, 248), transparent); /* Apply gradient */
+    border-image-slice: 1;
+
+  }
+
+  .custom-divider::after {
+    border-image: linear-gradient(to left, rgb(28, 12, 248), transparent); /* Apply gradient */
+    border-image-slice: 1;
+
   }

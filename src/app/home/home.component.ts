@@ -13,7 +13,7 @@ import { IconSpanComponent } from "../icon-list/icon-list.component";
 export const fadeDownAnimation = trigger('fadeDown', [
   transition(':enter', [
     style({  transform: 'translateY(-5%) scale(1)',opacity: 0 }),
-    animate('800ms ease-in', style({  transform: 'translateY(0%) scale(1)',opacity: 1 })),
+    animate('1200ms ease-in', style({  transform: 'translateY(0%) scale(1)',opacity: 1 })),
   ]),
 ]);
 
