@@ -29,17 +29,26 @@ export class HomeComponent {
   frontendDevItems = ["ab", "aofkpaofkap", "word here"]
 
   frontendDevIcons = [
-    { src: '../../assets/images/spring-icon.png', description: 'Spring' },
-    { src: '../../assets/images/java-icon.png', description: 'Java' }
+    { src: '../../assets/images/angular-icon.png', description: 'Angular' },
+    { src: '../../assets/images/css3-icon.png', description: 'CSS3' },
+    { src: '../../assets/images/html5-icon.png', description: 'HTML5' },
+    { src: '../../assets/images/javascript-icon.png', description: 'Javascipt' },
+    { src: '../../assets/images/typescript-icon.png', description: 'Typescript' }
   ];
 
   backendDevIcons = [
+    { src: '../../assets/images/groovy-icon.png', description: 'Groovy' },
+    { src: '../../assets/images/java-icon.png', description: 'Java' },
+    { src: '../../assets/images/redis-icon.png', description: 'Redis' },
     { src: '../../assets/images/spring-icon.png', description: 'Spring' },
-    { src: '../../assets/images/java-icon.png', description: 'Java' }
+    { src: '../../assets/images/sqldeveloper-icon.png', description: 'SQL' }
   ];
 
   otherTechIcons  = [
-    { src: '../../assets/images/spring-icon.png', description: 'Spring' },
-    { src: '../../assets/images/java-icon.png', description: 'Java' }
-  ];
+    { src: '../../assets/images/dynatrace-icon.png', description: 'Dynatrace' },
+    { src: '../../assets/images/git-icon.png', description: 'Git' },
+    { src: '../../assets/images/gradle-icon.png', description: 'Gradle' },
+    { src: '../../assets/images/jenkins-icon.png', description: 'Jenkins' },
+    { src: '../../assets/images/ping-icon.png', description: 'Ping' },
+    { src: '../../assets/images/openshift-icon.png', description: 'Openshift' }  ];
 }
