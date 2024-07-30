@@ -81,7 +81,7 @@ const timing = '5s linear';
 })
 export class AppComponent implements OnInit, AfterViewInit {
   private typewriterService = inject(TypewriterEffectService);
-
+  title = "mrp-website"
   protected nameState: 'open' | 'closed' = 'closed';
 
   @ViewChild('nameElement') nameElement: ElementRef | undefined;

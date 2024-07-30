@@ -7,8 +7,7 @@ import { animate, keyframes, style, transition, trigger, state, AnimationEvent }
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { DividerComponent } from '../divider/divider.component';
 import { IconSpanComponent } from "../icon-list/icon-list.component";
-
-
+import { ResumeButtonComponent } from "../resume-button/resume-button.component";
 
 export const fadeDownAnimation = trigger('fadeDown', [
   transition(':enter', [
@@ -20,7 +19,7 @@ export const fadeDownAnimation = trigger('fadeDown', [
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DividerComponent, NzFlexModule, NzGridModule, NzIconModule, NzDividerModule, IconSpanComponent],
+  imports: [DividerComponent, NzFlexModule, NzGridModule, NzIconModule, NzDividerModule, IconSpanComponent, ResumeButtonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
   animations: [fadeDownAnimation]
